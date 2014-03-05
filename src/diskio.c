@@ -1,3 +1,4 @@
+#ifdef MRUBY_IO_LIBNOSYS_ENABLE_DUMMY_DRIVER
 /*-----------------------------------------------------------------------*/
 /* Low level disk I/O module skeleton for FatFs     (C)ChaN, 2013        */
 /*-----------------------------------------------------------------------*/
@@ -102,3 +103,5 @@ DRESULT disk_ioctl (
 	return RES_PARERR;
 }
 #endif
+
+#endif /* MRUBY_IO_LIBNOSYS_ENABLE_DUMMY_DRIVER__ */

@@ -1,6 +1,6 @@
 MRuby::Gem::Specification.new('mruby-io-libnosys') do |spec|
-  spec.license = 'MIT and others. See also copyright notice on source code.'
-  spec.authors = 'Monami-ya LLC, Japan.'
+  spec.licenses = ['MIT', 'FatFs license', 'Other permissive']
+  spec.authors = ['Monami-ya LLC, Japan.', 'ChaN', 'Shaun Jackman']
 
   spec.cc.include_paths << "#{build.root}/src"
 end
