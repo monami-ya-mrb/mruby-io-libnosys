@@ -1752,7 +1752,7 @@ void get_fileinfo (		/* No return code */
 #if _USE_LFN
 			if (IsUpper(c) && (dir[DIR_NTres] & (i >= 9 ? NS_EXT : NS_BODY)))
 				c += 0x20;			/* To lower */
-#if _LFN_UNICODE
+#if !_LFN_UNICODE
 			if (IsDBCS1(c) && i != 8 && i != 11 && IsDBCS2(dir[i]))
 				c = c << 8 | dir[i++];
 			c = ff_convert(c, 1);	/* OEM -> Unicode */
@@ -2131,7 +2131,7 @@ int get_ldnumber (		/* Returns logical drive number (-1:invalid drive) */
 /*-----------------------------------------------------------------------*/
 
 static
-BYTE check_fs (	/* 0:FAT boor sector, 1:Valid boor sector but not FAT, 2:Not a boot sector, 3:Disk error */
+BYTE check_fs (	/* 0:FAT boot sector, 1:Valid boot sector but not FAT, 2:Not a boot sector, 3:Disk error */
 	FATFS* fs,	/* File system object */
 	DWORD sect	/* Sector# (lba) to check if it is an FAT boot record or not */
 )
